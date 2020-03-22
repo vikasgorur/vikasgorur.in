@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://vikasgorur.in/projects/</loc>
+    <lastmod>2020-03-22T21:35:50+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vikasgorur.in/</loc>
+    <lastmod>2020-03-22T21:35:50+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vikasgorur.in/writing/visual-induction/</loc>
+    <lastmod>2020-03-22T21:08:41+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vikasgorur.in/writing/</loc>
+    <lastmod>2020-03-22T21:08:41+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vikasgorur.in/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vikasgorur.in/tags/</loc>
+  </url>
+  
+</urlset>

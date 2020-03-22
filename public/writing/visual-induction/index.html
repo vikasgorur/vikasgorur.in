@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.67.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Visualizing an Induction Proof &middot; Vikas Gorur</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://vikasgorur.in/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://vikasgorur.in/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://vikasgorur.in/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://vikasgorur.in/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link type="text/css" rel="stylesheet" href="https://vikasgorur.in/css/site.css">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container">
+    <img src="https://vikasgorur.in/me.svg" />
+    <div class="sidebar-about">
+      <a href="https://vikasgorur.in/"><h1>Vikas Gorur</h1></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/projects/">projects</a></li>
+      <li><a href="/writing/">writing</a></li>
+    </ul>
+
+    <a href="https://twitter.com/vikasgorur/">
+      <span class="icon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg></span>
+    </a>
+    <a href="https://www.instagram.com/vikasgorur/">
+      <span class="icon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.05 3.233c-.04.78-.17 1.203-.28 1.485-.15.374-.32.64-.6.92-.28.28-.55.453-.92.598-.28.11-.71.24-1.49.276-.85.038-1.1.047-3.24.047s-2.39-.01-3.24-.05c-.78-.04-1.21-.17-1.49-.28-.38-.15-.64-.32-.92-.6-.28-.28-.46-.55-.6-.92-.11-.28-.24-.71-.28-1.49-.03-.84-.04-1.1-.04-3.23s.01-2.39.04-3.24c.04-.78.17-1.21.28-1.49.14-.38.32-.64.6-.92.28-.28.54-.46.92-.6.28-.11.7-.24 1.48-.28.85-.03 1.1-.04 3.24-.04zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"/></svg></span>
+    </a>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Visualizing an Induction Proof</h1>
+  <time datetime=2020-03-22T21:08:41&#43;0530 class="post-date">Sun, Mar 22, 2020</time>
+  <p>Like many nerds I was obsessed with math in my late teens, until that obsession was replaced by computers and programming.
+I recently decided to restart my math education and go back all the way to the beginning.</p>
+
+<p>The beginning, of course, is the set of natural numbers. The natural numbers are defined by induction, thus induction is one
+of the primary means of proving results about them.</p>
+
+<p>Here's a typical exercise in induction. Prove by induction that:</p>
+
+<p><span  class="math">\[ 1 + 3 + 5 + ... + (2n-1) = n^2 \]</span></p>
+
+<p>The algebra is straight-forward:</p>
+
+<p>Let:
+<span  class="math">\(P(n) = 1 + 3 + 5 + ... + (2n-1)\)</span></p>
+
+<p>We verify that <span  class="math">\(P(1) = 1^2\)</span>.</p>
+
+<p>Since <span  class="math">\(2n+1\)</span> is the next odd number after <span  class="math">\(2n-1\)</span>, we can write:</p>
+
+<p><span  class="math">\[\begin{aligned}
+P(n+1) &= P(n) + (2n+1) \\
+&= n^2 + 2n + 1 \\
+&= (n+1)^2 \\
+\end{aligned}\]</span></p>
+
+<p>But this gives us no insight. Why should the sum of the first <span  class="math">\(n\)</span> odd numbers be <span  class="math">\(n^2\)</span>. Is this just a co-incidence or part of a general pattern?</p>
+
+<p>The first question can be answered if we draw successive squares as layers wrapping around a central core of <span  class="math">\(1\)</span>. In the image below
+the zeroth layer is just the small square containing <span  class="math">\(1\)</span> (this drawing only works if we use 0-based indexing).
+The next layer (corresponding to <span  class="math">\(2^2\)</span>) adds <span  class="math">\(3\)</span> small squares around <span  class="math">\(1\)</span>. The next layer after that adds <span  class="math">\(5\)</span> small squares around that to produce <span  class="math">\(9\)</span> small squares in total.</p>
+
+<p><figure><img src="/images/induction.png" alt="Visual proof"></figure></p>
+
+<p>Extending the analogy, the <span  class="math">\(n\)</span>th layer adds two stripes of size <span  class="math">\(n\)</span> and one small square in the corner, for a total of <span  class="math">\(2n+1\)</span>.</p>
+
+<p>So is there a pattern here? The odd/even distinction splits the natural numbers into two sets, and the square is a two-dimensional shape. Is that a connection? What happens if we split the natural numbers into three sets and sum one of them (<span  class="math">\(1 + 4 + 7 + ...\)</span>)? More generally, what does <span  class="math">\(P(n, k)\)</span> look like, where</p>
+
+<p><span  class="math">\[P(n, k) = 1 + (k + 1) + (2k + 1) + ... + (nk + 1)\]</span></p>
+
+<p>We can graph this for a few values of <span  class="math">\(k\)</span>. We see that each curve appears to be quadratic. Can we derive the general closed-form expression for this series?</p>
+
+<p><figure><img src="/images/pnk.svg" alt="Visual proof"></figure></p>
+
+<p><span  class="math">\[\begin{aligned}
+P(n, k) &= n + k(1 + 2 + 3 + ... + n) \\
+&= n + \frac{kn(n-1)}{2} \\
+&= \frac{1}{2}[kn^2 - kn + 2n] \\
+&= \frac{k}{2}n^2 + (2-k)n
+\end{aligned}\]</span></p>
+
+<p>When <span  class="math">\(k=2\)</span> this reduces to <span  class="math">\(n^2\)</span>.</p>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

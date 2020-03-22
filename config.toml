@@ -1,0 +1,9 @@
+languageCode = "en-us"
+title = "Vikas Gorur"
+baseurl = "https://vikasgorur.in/"
+
+theme = "hyde"
+
+staticDir = "static"
+
+pluralizeListTitles = "false"

@@ -1,0 +1,22 @@
+<div class="sidebar">
+  <div class="container">
+    <img src="{{ .Site.BaseURL }}me.svg" />
+    <div class="sidebar-about">
+      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/projects/">projects</a></li>
+      <li><a href="/writing/">writing</a></li>
+    </ul>
+
+    <a href="https://twitter.com/vikasgorur/">
+      <span class="icon">{{ partial "icons/twitter.svg" }}</span>
+    </a>
+    <a href="https://www.instagram.com/vikasgorur/">
+      <span class="icon">{{ partial "icons/instagram.svg" }}</span>
+    </a>
+
+    {{ partial "katex.html" . }}
+  </div>
+</div>
