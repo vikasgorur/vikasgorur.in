@@ -107,13 +107,14 @@ The next layer (corresponding to <span  class="math">\(2^2\)</span>) adds <span 
 <p><figure><img src="/images/pnk.svg" alt="Visual proof"></figure></p>
 
 <p><span  class="math">\[\begin{aligned}
-P(n, k) &= n + k(1 + 2 + 3 + ... + n) \\
-&= n + \frac{kn(n-1)}{2} \\
-&= \frac{1}{2}[kn^2 - kn + 2n] \\
-&= \frac{k}{2}n^2 + (2-k)n
+P(n, k) &= (0k + 1) + (1k + 1) + (2k + 1) + ... + (nk + 1) \\
+&= k(1 + 2 + 3 + ... + n) + (n + 1) \\
+&= \frac{kn(n+1)}{2} + (n + 1)\\
+&= \frac{k(n^2 + n)}{2} + n+1 \\
+&= \frac{k}{2}n^2 + \frac{k+2}{2}n + 1
 \end{aligned}\]</span></p>
 
-<p>When <span  class="math">\(k=2\)</span> this reduces to <span  class="math">\(n^2\)</span>.</p>
+<p>When <span  class="math">\(k=2\)</span> this reduces to <span  class="math">\((n+1)^2\)</span>.</p>
 
 </div>
 

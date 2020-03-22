@@ -49,10 +49,11 @@ We can graph this for a few values of $$k$$. We see that each curve appears to b
 ![Visual proof](/images/pnk.svg)
 
 $$\begin{aligned}
-P(n, k) &= n + k(1 + 2 + 3 + ... + n) \\
-&= n + \frac{kn(n-1)}{2} \\
-&= \frac{1}{2}[kn^2 - kn + 2n] \\
-&= \frac{k}{2}n^2 + (2-k)n
+P(n, k) &= (0k + 1) + (1k + 1) + (2k + 1) + ... + (nk + 1) \\
+&= k(1 + 2 + 3 + ... + n) + (n + 1) \\
+&= \frac{kn(n+1)}{2} + (n + 1)\\
+&= \frac{k(n^2 + n)}{2} + n+1 \\
+&= \frac{k}{2}n^2 + \frac{k+2}{2}n + 1
 \end{aligned}$$
 
-When $$k=2$$ this reduces to $$n^2$$.
+When $$k=2$$ this reduces to $$(n+1)^2$$.
