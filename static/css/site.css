@@ -1,9 +1,19 @@
 svg path {
     fill: #fff;
-  }
+}
   
-  .icon {
+.icon {
     display: inline-block;
     height: 20px;
     width: 20px;
-  }%
+}
+
+@media (min-width: 48em) {
+    .sidebar {
+        width: 14rem;
+    }
+}
+  
+.sidebar-about h1 {
+    font-size: 1.8rem;
+}
